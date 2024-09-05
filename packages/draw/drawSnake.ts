@@ -18,7 +18,7 @@ export const drawSnake = (
     const u = (i + 1) * 0.6;
 
     ctx.save();
-    ctx.fillStyle = o.colorSnake;
+    ctx.fillStyle = o.colorSnake; // Cor azul aplicada
     ctx.translate(cells[i].x * o.sizeCell + u, cells[i].y * o.sizeCell + u);
     ctx.beginPath();
     pathRoundedRect(
@@ -54,7 +54,7 @@ export const drawSnakeLerp = (
     const y = lerp(ki, snake0[i * 2 + 1], snake1[i * 2 + 1]) - 2;
 
     ctx.save();
-    ctx.fillStyle = o.colorSnake;
+    ctx.fillStyle = o.colorSnake; // Cor azul aplicada
     ctx.translate(x * o.sizeCell + u, y * o.sizeCell + u);
     ctx.beginPath();
     pathRoundedRect(
@@ -67,3 +67,14 @@ export const drawSnakeLerp = (
     ctx.restore();
   }
 };
+
+// Chama a função drawSnake ou drawSnakeLerp com a cor azul nas opções
+const options = {
+  colorSnake: "#0000FF", // Cor azul
+  sizeCell: 16
+};
+
+// Exemplo de como chamar as funções
+// drawSnake(ctx, snake, options);
+// drawSnakeLerp(ctx, snake0, snake1, k, options);
+
