@@ -33,11 +33,15 @@ jobs:
         id: generate-snake
         uses: ./
         with:
-          github_user_name: platane
+          # --- [CORREÇÃO 1: Seu Nome de Usuário] ---
+          github_user_name: viniciugonzaga
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-            dist/github-contribution-grid-snake.gif?color_snake=#B30000&color_dots=#333333,#555555,#777777,#999999,#bbbbbb
+            # --- [CORREÇÃO 2: Cores Personalizadas para SVG Dark] ---
+            # Cobra: Vermelho (#B30000) | Grade: Tons de Cinza/Preto
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#B30000&color_dots=#000000,#333333,#555555,#777777
+            # O GIF já estava com #B30000, apenas ajustamos os pontos para tons de preto
+            dist/github-contribution-grid-snake.gif?color_snake=#B30000&color_dots=#000000,#333333,#555555,#777777
 
 
       - name: ensure the generated file exists
@@ -74,10 +78,13 @@ jobs:
         id: generate-snake
         uses: ./svg-only
         with:
-          github_user_name: platane
+          # --- [CORREÇÃO 3: Seu Nome de Usuário] ---
+          github_user_name: viniciugonzaga
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            # --- [CORREÇÃO 4: Cores Personalizadas para SVG Dark] ---
+            # Cobra: Vermelho (#B30000) | Grade: Tons de Cinza/Preto
+            dist/github-contribution-grid-snake-dark.svg?color_snake=#B30000&color_dots=#000000,#333333,#555555,#777777
 
       - name: ensure the generated file exists
         run: |
